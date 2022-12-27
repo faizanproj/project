@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="pname" id=""><br>
+        <label for="">age</label>
+        <input type="text" name="age" id=""><br>
+        <label for="">city</label>
+        <input type="text" name="city" id=""><br>
+        <label for="">date</label>
+        <input type="date" name="date" id=""><br>
+        <label for="">time</label>
+        <input type="time" name="time" id=""><br>
+        <label for="">number</label>
+        <input type="number" name="number" id=""><br>
+        <input type="submit" name="" id="">
+    </form>
+    <h2>show patient list</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>sr.no</td>
+                <td>name</td>
+                <td>age</td>
+                <td>city</td>
+                <td>date</td>
+                <td>time</td>
+                <td>number</td>
+                <td>action</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in allpatient %}
+            <tr>
+                <td>{{x.id}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.city}}</td>
+                <td>{{x.date}}</td>
+                <td>{{x.time}}</td>
+                <td>{{x.number}}</td>
+                <td><a href="/delete/{{x.id}}/">delete</a></td>
+                <td><a href="/edit/{{x.id}}/">edit</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock body %}

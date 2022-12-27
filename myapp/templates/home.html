@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<h1>All Doctors</h1>
+<div class="d-flex">
+    {% for x in all_doc %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" style="height: 240px;" src="{{x.img.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <p class="card-text">{{x.speciality}}</p>
+            <a href="/appointment/" class="btn btn-primary">Appointment</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock body %}
+

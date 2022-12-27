@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<h1>Register page</h1>
+{% for x in messages %}
+    <h2>{{x}}</h2>
+{% endfor %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="">username</label>
+    <input type="text" name="username" id=""><br>
+    <label for="">email</label>
+    <input type="email" name="email" id=""><br>
+    <label for="">password</label>
+    <input type="password" name="password" id=""><br>
+    <input type="submit" name="" id="">
+</form>
+{% endblock body %}
+
